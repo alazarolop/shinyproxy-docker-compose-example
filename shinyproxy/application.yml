@@ -1,9 +1,18 @@
 proxy:
   title: ShinyProxy
   port: 8080
-  hide-navbar: false
-  template-path: ./template
+  #logo-url: file:///opt/shinyproxy/logo.png
+  template-path: ./templates
   container-log-path: /container-logs
+  authentication: simple
+  admin-groups: admins
+  users:
+  - name: jack
+    password: password
+    groups: admins
+  - name: jeff
+    password: password
+  hide-navbar: false
   docker:
     internal-networking: true
     container-network: "shinyproxy-docker-compose-example_default"
